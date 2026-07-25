@@ -1,0 +1,23 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+
+# IDE files
+.vscode/
+.idea/
+*.suo
+*.sln
+*.user
+
+# Environment
+.env
+.env.local
+
+# Project specific
+includes/config.local.php
+
+# Logs
+*.log
