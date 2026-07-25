@@ -3,21 +3,32 @@
 include '../includes/config.php';
 include '../includes/header.php';
 
+$default_service = isset($_GET['service']) ? mysqli_real_escape_string($conn, $_GET['service']) : '';
+
 $results = [];
 $searched = false;
+
+// Check if service is pre-selected from URL
+$url_service = isset($_GET['service']) ? mysqli_real_escape_string($conn, $_GET['service']) : '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $district_id = mysqli_real_escape_string($conn, $_POST['district']);
     $service_id = mysqli_real_escape_string($conn, $_POST['service']);
     
-    if ($district_id && $service_id) {
+    if ($service_id) { // Only service required, not district
         $query = "SELECT t.id, t.name, t.phone, t.rating, t.jobs_completed, 
                          s.service_name, d.district_name 
                   FROM technicians t
                   JOIN services s ON t.service_id = s.id
                   JOIN districts d ON t.district_id = d.id
-                  WHERE t.district_id = '$district_id' AND t.service_id = '$service_id'
-                  ORDER BY t.rating DESC";
+                  WHERE t.service_id = '$service_id'";
+        
+        // Add district filter if selected
+        if ($district_id) {
+            $query .= " AND t.district_id = '$district_id'";
+        }
+        
+        $query .= " ORDER BY t.rating DESC";
         
         $result = mysqli_query($conn, $query);
         
@@ -29,6 +40,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         $searched = true;
     }
+} 
+// Auto-search if service is pre-selected via URL
+elseif ($url_service) {
+    $service_id = $url_service;
+    $query = "SELECT t.id, t.name, t.phone, t.rating, t.jobs_completed, 
+                     s.service_name, d.district_name 
+              FROM technicians t
+              JOIN services s ON t.service_id = s.id
+              JOIN districts d ON t.district_id = d.id
+              WHERE t.service_id = '$service_id'
+              ORDER BY t.rating DESC";
+    
+    $result = mysqli_query($conn, $query);
+    
+    if ($result) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $results[] = $row;
+        }
+    }
+    
+    $searched = true;
 }
 ?>
 
@@ -75,21 +107,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <label for="service">Select Service:</label>
                     <select id="service" name="service" required>
                         <option value="">-- Choose a Service --</option>
-                        <option value="1">Plumber</option>
-                        <option value="2">Electrician</option>
-                        <option value="3">Carpenter</option>
-                        <option value="4">Mechanic</option>
-                        <option value="5">Painter</option>
-                        <option value="6">Welder</option>
-                        <option value="7">Mason</option>
-                        <option value="8">Locksmith</option>
-                        <option value="9">Appliance Repair</option>
-                        <option value="10">AC Technician</option>
-                        <option value="11">Phone Repair</option>
-                        <option value="12">Computer Technician</option>
-                        <option value="13">Plumbing & Gas</option>
-                        <option value="14">Electrical & Solar</option>
-                        <option value="15">General Repairs</option>
+                        <option value="1" <?php echo ($url_service == '1') ? 'selected' : ''; ?>>Plumber</option>
+                        <option value="2" <?php echo ($url_service == '2') ? 'selected' : ''; ?>>Electrician</option>
+                        <option value="3" <?php echo ($url_service == '3') ? 'selected' : ''; ?>>Carpenter</option>
+                        <option value="4" <?php echo ($url_service == '4') ? 'selected' : ''; ?>>Mechanic</option>
+                        <option value="5" <?php echo ($url_service == '5') ? 'selected' : ''; ?>>Painter</option>
+                        <option value="6" <?php echo ($url_service == '6') ? 'selected' : ''; ?>>Welder</option>
+                        <option value="7" <?php echo ($url_service == '7') ? 'selected' : ''; ?>>Mason</option>
+                        <option value="8" <?php echo ($url_service == '8') ? 'selected' : ''; ?>>Locksmith</option>
+                        <option value="9" <?php echo ($url_service == '9') ? 'selected' : ''; ?>>Appliance Repair</option>
+                        <option value="10" <?php echo ($url_service == '10') ? 'selected' : ''; ?>>AC Technician</option>
+                        <option value="11" <?php echo ($url_service == '11') ? 'selected' : ''; ?>>Phone Repair</option>
+                        <option value="12" <?php echo ($url_service == '12') ? 'selected' : ''; ?>>Computer Technician</option>
+                        <option value="13" <?php echo ($url_service == '13') ? 'selected' : ''; ?>>Plumbing & Gas</option>
+                        <option value="14" <?php echo ($url_service == '14') ? 'selected' : ''; ?>>Electrical & Solar</option>
+                        <option value="15" <?php echo ($url_service == '15') ? 'selected' : ''; ?>>General Repairs</option>
                     </select>
                 </div>
                 

@@ -17,6 +17,91 @@ include '../includes/header.php';
     </div>
 </section>
 
+<!-- Browse Services Section -->
+<section class="browse-services">
+    <div class="find-container">
+        <h2>Browse Services by Category</h2>
+        <p>Find professionals for your needs</p>
+        
+        <div class="services-grid">
+            <a href="find.php?service=1" class="service-card">
+                <div class="service-icon">🔧</div>
+                <div class="service-name">Plumber</div>
+            </a>
+            
+            <a href="find.php?service=2" class="service-card">
+                <div class="service-icon">⚡</div>
+                <div class="service-name">Electrician</div>
+            </a>
+            
+            <a href="find.php?service=3" class="service-card">
+                <div class="service-icon">🪚</div>
+                <div class="service-name">Carpenter</div>
+            </a>
+            
+            <a href="find.php?service=4" class="service-card">
+                <div class="service-icon">🔩</div>
+                <div class="service-name">Mechanic</div>
+            </a>
+            
+            <a href="find.php?service=5" class="service-card">
+                <div class="service-icon">🎨</div>
+                <div class="service-name">Painter</div>
+            </a>
+            
+            <a href="find.php?service=6" class="service-card">
+                <div class="service-icon">🔥</div>
+                <div class="service-name">Welder</div>
+            </a>
+            
+            <a href="find.php?service=7" class="service-card">
+                <div class="service-icon">🧱</div>
+                <div class="service-name">Mason</div>
+            </a>
+            
+            <a href="find.php?service=8" class="service-card">
+                <div class="service-icon">🔐</div>
+                <div class="service-name">Locksmith</div>
+            </a>
+            
+            <a href="find.php?service=9" class="service-card">
+                <div class="service-icon">❄️</div>
+                <div class="service-name">Appliance Repair</div>
+            </a>
+            
+            <a href="find.php?service=10" class="service-card">
+                <div class="service-icon">🌡️</div>
+                <div class="service-name">AC Technician</div>
+            </a>
+            
+            <a href="find.php?service=11" class="service-card">
+                <div class="service-icon">📱</div>
+                <div class="service-name">Phone Repair</div>
+            </a>
+            
+            <a href="find.php?service=12" class="service-card">
+                <div class="service-icon">💻</div>
+                <div class="service-name">Computer Tech</div>
+            </a>
+            
+            <a href="find.php?service=13" class="service-card">
+                <div class="service-icon">🚰</div>
+                <div class="service-name">Plumbing & Gas</div>
+            </a>
+            
+            <a href="find.php?service=14" class="service-card">
+                <div class="service-icon">☀️</div>
+                <div class="service-name">Electrical & Solar</div>
+            </a>
+            
+            <a href="find.php?service=15" class="service-card">
+                <div class="service-icon">🛠️</div>
+                <div class="service-name">General Repairs</div>
+            </a>
+        </div>
+    </div>
+</section>
+
 <!-- How It Works Section -->
 <section class="how-it-works">
     <div class="how-container">

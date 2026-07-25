@@ -1405,3 +1405,69 @@ a.login-btn:active {
   text-decoration: underline;
   font-weight: 600;
 }
+
+/*-----------------------Browse Services Section-----------------------*/
+
+.browse-services {
+  background-color: white;
+  border-top: 1px solid #e5e7eb;
+  padding: 64px 16px;
+}
+
+.browse-services h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1f2937;
+  text-align: center;
+}
+
+.browse-services p {
+  font-size: 14px;
+  color: #6b7280;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 16px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #1f2937;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  background-color: #f0fdf4;
+  border-color: #059669;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(5, 150, 105, 0.1);
+}
+
+.service-icon {
+  font-size: 40px;
+  line-height: 1;
+}
+
+.service-name {
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  color: #1f2937;
+}

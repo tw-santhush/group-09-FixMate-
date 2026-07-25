@@ -12,9 +12,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
     $password = $_POST['password'];
     
     if ($email && $password) {
-        $query = "SELECT id, email, password FROM admins WHERE email = '$email'";
-        $result = mysqli_query($conn, $query);
-        $admin = mysqli_fetch_assoc($result);
+    $query = "SELECT id, email, password FROM admins WHERE email = '$email'";
+    $result = mysqli_query($conn, $query);
+    $admin = mysqli_fetch_assoc($result);
+    
         
         if ($admin && password_verify($password, $admin['password'])) {
             $_SESSION['admin_id'] = $admin['id'];
