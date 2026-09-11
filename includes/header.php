@@ -14,29 +14,37 @@
             <span class="logo-icon">🔧</span>
             <span>FixMate</span>
         </a>
-        
+                
         <nav class="nav-tabs">
             <a href="home.php" class="nav-link">Home</a>
             <a href="find.php" class="nav-link">Find a Service Pro</a>
-            <a href="dashboard.php" class="nav-link">Technician Dashboard</a>
-            <a href="admin_panel.php" class="nav-link">Admin Panel</a>
+
+            <?php if (isset($_SESSION['tech_id'])): ?>
+                <a href="dashboard.php" class="nav-link">Technician Dashboard</a>
+            <?php endif; ?>
+
+            <?php if (isset($_SESSION['admin_id'])): ?>
+                <a href="admin_panel.php" class="nav-link">Admin Panel</a>
+            <?php endif; ?>
         </nav>
 
-<?php 
-// Check what user is logged in
-if (isset($_SESSION['user_id'])) {
-    // Normal user logged in
-    echo '<a href="user_profile.php" class="login-btn">' . htmlspecialchars($_SESSION['user_name']) . '</a>';
-} else if (isset($_SESSION['tech_id'])) {
-    // Technician logged in
-    echo '<a href="dashboard.php" class="login-btn">' . htmlspecialchars($_SESSION['tech_name']) . '</a>';
-} else if (isset($_SESSION['admin_id'])) {
-    // Admin logged in
-    echo '<a href="admin_panel.php" class="login-btn">Admin Panel</a>';
-} else {
-    // Not logged in
-    echo '<a href="login.php" class="login-btn">Login</a>';
-}
-?>
+        <?php 
+        // Check what user is logged in
+        if (isset($_SESSION['user_id'])) {
+            // Normal user logged in
+            echo '<a href="user_profile.php" class="login-btn">' . 
+                 htmlspecialchars($_SESSION['user_name']) . '</a>';
+        } else if (isset($_SESSION['tech_id'])) {
+            // Technician logged in
+            echo '<a href="dashboard.php" class="login-btn">' . 
+                 htmlspecialchars($_SESSION['tech_name']) . '</a>';
+        } else if (isset($_SESSION['admin_id'])) {
+            // Admin logged in
+            echo '<a href="admin_panel.php" class="login-btn">Admin Panel</a>';
+        } else {
+            // Not logged in
+            echo '<a href="login.php" class="login-btn">Login</a>';
+        }
+        ?>
     </div>
 </header>

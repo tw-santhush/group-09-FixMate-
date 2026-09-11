@@ -1648,3 +1648,27 @@ a.login-btn:active {
         padding: 6px 4px;
     }
 }
+
+/* Role login links on login page */
+.auth-roles {
+    text-align: center;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 13px;
+}
+
+.auth-roles a {
+    color: #059669;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 8px;
+}
+
+.auth-roles a:hover {
+    text-decoration: underline;
+}
+
+.auth-roles span {
+    color: #d1d5db;
+}
