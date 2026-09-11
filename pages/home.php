@@ -7,7 +7,7 @@ include '../includes/header.php';
 <section class="hero">
     <div class="hero-content">
         <h1>The <span class="highlight">Smart</span> Way to Find a<br><span class="service-box">Service Pro</span></h1>
-        <p>Stop hunting for torn posters on walls. Browse verified local plumbers, electricians, carpenters, mechanics & painters — with phone numbers & ratings.</p>
+        <p>Stop hunting for torn posters on walls. Browse verified local plumbers, electricians, <br> carpenters, mechanics & painters — with phone numbers & ratings.</p>
         <div class="hero-buttons">
             <div class="hero-buttons">
                 <a href="find.php" class="btn-primary">Find a Service Pro</a>
@@ -176,7 +176,7 @@ include '../includes/header.php';
 <section class="service-pro-cta">
     <div class="cta-container">
         <div class="cta-label">For Professionals</div>
-        <h2>Are You a <span class="highlight">Service Pro</span>?</h2>
+        <h2>Are You a <span class="highlight">Service Pro ?</span></h2>
         <p>Get listed on FixMate for free and start receiving calls from customers in your area. <br>No fees. No commissions.</p>
         <a href="register_technician.php" class="cta-button">Register for Free</a>
     </div>
@@ -185,7 +185,7 @@ include '../includes/header.php';
 <!-- The white color section with a paragraph -->
 <section class="blank-space-section">
   <div class="blank-section-content">
-    <p>© 2026 FixMate. All rights reserved.</p>
+    <p> FixMate. The Smart Way to Find a Service Pro.</p>
   </div>
 </section>
 
