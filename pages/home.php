@@ -1,5 +1,12 @@
 <?php
+/** @var mysqli $conn */
+
 include '../includes/config.php';
+
+// Live stats from the database
+$tech_count = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as c FROM technicians"))['c'];
+$dist_count = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as c FROM districts"))['c'];
+
 include '../includes/header.php';
 ?>
 
@@ -137,7 +144,7 @@ include '../includes/header.php';
 </section> 
 
 <!-- About Section -->
-<section class="about">
+<section class="about" id="about">
     <div class="about-container">
         <div class="about-content">
             <div class="about-text">
@@ -150,11 +157,11 @@ include '../includes/header.php';
                 
                 <div class="stats-grid">
                     <div class="stat-item">
-                        <div class="stat-number">30+</div>
+                        <div class="stat-number"><?php echo $tech_count; ?></div>
                         <div class="stat-label">Registered Pros</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">25</div>
+                        <div class="stat-number"><?php echo $dist_count; ?></div>
                         <div class="stat-label">Districts Covered</div>
                     </div>
                     <div class="stat-item">

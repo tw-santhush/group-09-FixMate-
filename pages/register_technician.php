@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
                     <div class="form-group">
                         <label for="district">District</label>
                         <select id="district" name="district" required>
-                            <option value="">-- Choose District --</option>
+                            <option value="">-- Choose a District --</option>
                             <option value="1">Colombo</option>
                             <option value="2">Gampaha</option>
                             <option value="3">Kalutara</option>
@@ -119,10 +119,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
                             <option value="19">Ratnapura</option>
                             <option value="20">Kegalle</option>
                             <option value="21">Nuwara Eliya</option>
-                            <option value="22">Matara</option>
-                            <option value="23">Kalutara</option>
-                            <option value="24">Chilaw</option>
-                            <option value="25">Negombo</option>
+                            <option value="22">Matale</option>
+                            <option value="23">Kilinochchi</option>
+                            <option value="24">Mannar</option>
+                            <option value="25">Vavuniya</option>
                         </select>
                     </div>
                     

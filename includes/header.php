@@ -18,6 +18,7 @@
         <nav class="nav-tabs">
             <a href="home.php" class="nav-link">Home</a>
             <a href="find.php" class="nav-link">Find a Service Pro</a>
+            <a href="home.php#about" class="nav-link">About</a>
 
             <?php if (isset($_SESSION['tech_id'])): ?>
                 <a href="dashboard.php" class="nav-link">Technician Dashboard</a>

@@ -89,15 +89,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
                         <label for="district">District</label>
                         <select id="district" name="district" required>
                             <option value="">-- Choose District --</option>
-                            <option value="1" <?php echo ($tech['district_id'] == 1) ? 'selected' : ''; ?>>Colombo</option>
-                            <option value="2" <?php echo ($tech['district_id'] == 2) ? 'selected' : ''; ?>>Gampaha</option>
-                            <option value="3" <?php echo ($tech['district_id'] == 3) ? 'selected' : ''; ?>>Kalutara</option>
-                            <option value="4" <?php echo ($tech['district_id'] == 4) ? 'selected' : ''; ?>>Kandy</option>
-                            <option value="5" <?php echo ($tech['district_id'] == 5) ? 'selected' : ''; ?>>Matara</option>
-                            <option value="6" <?php echo ($tech['district_id'] == 6) ? 'selected' : ''; ?>>Galle</option>
-                            <option value="7" <?php echo ($tech['district_id'] == 7) ? 'selected' : ''; ?>>Hambantota</option>
-                            <option value="8" <?php echo ($tech['district_id'] == 8) ? 'selected' : ''; ?>>Jaffna</option>
-                            <option value="9" <?php echo ($tech['district_id'] == 9) ? 'selected' : ''; ?>>Mullaitivu</option>
+                            <option value="1"  <?php echo ($tech['district_id'] == 1)  ? 'selected' : ''; ?>>Colombo</option>
+                            <option value="2"  <?php echo ($tech['district_id'] == 2)  ? 'selected' : ''; ?>>Gampaha</option>
+                            <option value="3"  <?php echo ($tech['district_id'] == 3)  ? 'selected' : ''; ?>>Kalutara</option>
+                            <option value="4"  <?php echo ($tech['district_id'] == 4)  ? 'selected' : ''; ?>>Kandy</option>
+                            <option value="5"  <?php echo ($tech['district_id'] == 5)  ? 'selected' : ''; ?>>Matara</option>
+                            <option value="6"  <?php echo ($tech['district_id'] == 6)  ? 'selected' : ''; ?>>Galle</option>
+                            <option value="7"  <?php echo ($tech['district_id'] == 7)  ? 'selected' : ''; ?>>Hambantota</option>
+                            <option value="8"  <?php echo ($tech['district_id'] == 8)  ? 'selected' : ''; ?>>Jaffna</option>
+                            <option value="9"  <?php echo ($tech['district_id'] == 9)  ? 'selected' : ''; ?>>Mullaitivu</option>
                             <option value="10" <?php echo ($tech['district_id'] == 10) ? 'selected' : ''; ?>>Batticaloa</option>
                             <option value="11" <?php echo ($tech['district_id'] == 11) ? 'selected' : ''; ?>>Ampara</option>
                             <option value="12" <?php echo ($tech['district_id'] == 12) ? 'selected' : ''; ?>>Trincomalee</option>
@@ -110,7 +110,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
                             <option value="19" <?php echo ($tech['district_id'] == 19) ? 'selected' : ''; ?>>Ratnapura</option>
                             <option value="20" <?php echo ($tech['district_id'] == 20) ? 'selected' : ''; ?>>Kegalle</option>
                             <option value="21" <?php echo ($tech['district_id'] == 21) ? 'selected' : ''; ?>>Nuwara Eliya</option>
-                            <option value="25" <?php echo ($tech['district_id'] == 25) ? 'selected' : ''; ?>>Negombo</option>
+                            <option value="22" <?php echo ($tech['district_id'] == 22) ? 'selected' : ''; ?>>Matale</option>
+                            <option value="23" <?php echo ($tech['district_id'] == 23) ? 'selected' : ''; ?>>Kilinochchi</option>
+                            <option value="24" <?php echo ($tech['district_id'] == 24) ? 'selected' : ''; ?>>Mannar</option>
+                            <option value="25" <?php echo ($tech['district_id'] == 25) ? 'selected' : ''; ?>>Vavuniya</option>
                         </select>
                     </div>
                     

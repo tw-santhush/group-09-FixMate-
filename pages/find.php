@@ -96,10 +96,10 @@ elseif ($url_service) {
                         <option value="19">Ratnapura</option>
                         <option value="20">Kegalle</option>
                         <option value="21">Nuwara Eliya</option>
-                        <option value="22">Matara</option>
-                        <option value="23">Kalutara</option>
-                        <option value="24">Chilaw</option>
-                        <option value="25">Negombo</option>
+                        <option value="22">Matale</option>
+                        <option value="23">Kilinochchi</option>
+                        <option value="24">Mannar</option>
+                        <option value="25">Vavuniya</option>
                     </select>
                 </div>
                 
