@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&display=swap');
 
-/* HEADER_STYLING */
-
 * {
   margin: 0;
   padding: 0;
@@ -9,14 +7,16 @@
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   background-color: #f9fafb;
   color: #1f2937;
 }
+
+/* ---------- HEADER ---------- */
 
 header {
   background-color: white;
@@ -59,8 +59,6 @@ header {
   font-size: 18px;
 }
 
-/* Navigation Tabs */
-
 .nav-tabs {
   display: flex;
   gap: 8px;
@@ -72,18 +70,12 @@ header {
   padding: 6px 12px;
   color: #6b7280;
   text-decoration: none;
-  border: none;
-  background: none;
-  cursor: pointer;
   transition: all 0.2s;
-  position: relative;
 }
 
 .nav-link:hover {
   color: #059669;
 }
-
-/* Login Button */
 
 .login-btn {
   padding: 8px 20px;
@@ -93,7 +85,8 @@ header {
   border-radius: 8px;
   font-size: 14px;
   font-weight: bold;
-  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
   transition: all 0.2s;
 }
 
@@ -101,20 +94,14 @@ header {
   background-color: #047857;
 }
 
-.login-btn:active {
-  transform: scale(0.95);
-}
-
-/* Top Image BAR and Heding , P , Find SP button & Technician Login button */
+/* ---------- HERO ---------- */
 
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), 
-              url('../images/hero-bg.png');
+  background: url('../images/hero-bg.png');
   background-size: cover;
   background-position: center;
   padding: 96px 16px;
   text-align: center;
-  color: rgb(0, 0, 0);
 }
 
 .hero-content {
@@ -123,23 +110,18 @@ header {
 }
 
 .hero h1 {
-  font-family: system-ui;
   font-size: 48px;
   font-weight: 800;
   margin-bottom: 16px;
   line-height: 1.2;
-  letter-spacing: -0.5px;
-  color: #ffffff;
-  -webkit-text-stroke: 1px #f8f8f8;
+  color: white;
 }
 
 .hero h1 .highlight {
   color: #10b981;
-  -webkit-text-stroke: 1px #10b981;
 }
 
 .hero h1 .service-box {
-  font-family: system-ui;
   display: inline-block;
   background-color: #10b981;
   color: white;
@@ -148,11 +130,9 @@ header {
   font-size: 28px;
   margin-top: 8px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  -webkit-text-stroke: 0px #ffffff;
 }
 
 .hero p {
-  font-family: system-ui;
   font-size: 16px;
   margin: 32px auto;
   max-width: 672px;
@@ -172,11 +152,11 @@ header {
   padding: 14px 32px;
   background-color: white;
   color: #059669;
-  border: none;
   border-radius: 8px;
   font-size: 14px;
   font-weight: bold;
-  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   transition: all 0.2s;
 }
@@ -187,22 +167,22 @@ header {
 
 .btn-secondary {
   padding: 14px 32px;
-  background-color: rgba(255, 255, 255, 0.204);
-  color: rgb(255, 255, 255);
-  border: 2px solid rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
   border-radius: 8px;
   font-size: 14px;
   font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  display: inline-block;
   transition: all 0.2s;
 }
 
 .btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
-/*Three Steps to Get Help*/
+/* ---------- HOW IT WORKS ---------- */
 
 .how-it-works {
   background-color: white;
@@ -229,7 +209,6 @@ header {
   gap: 32px;
 }
 
-/*3 card*/
 .step-card {
   background-color: #f3f4f6;
   border: 1px solid #e5e7eb;
@@ -240,21 +219,16 @@ header {
   transition: all 0.2s;
 }
 
-/* popimg animation */
 .step-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* 1,2,3, numbers*/
 .step-number {
   position: absolute;
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 32px;
   height: 32px;
   background-color: #059669;
@@ -262,23 +236,24 @@ header {
   border-radius: 50%;
   font-size: 14px;
   font-weight: bold;
-  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .step-icon {
   font-size: 56px;
   margin: 16px 0;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80px;
 }
 
 .step-card h3 {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 8px;
-  color: #1f2937;
 }
 
 .step-card p {
@@ -287,7 +262,7 @@ header {
   line-height: 1.5;
 }
 
-/*About Section*/
+/* ---------- ABOUT ---------- */
 
 .about {
   background-color: #f9fafb;
@@ -297,14 +272,6 @@ header {
 .about-container {
   max-width: 1280px;
   margin: 0 auto;
-  text-align: center;
-}
-
-.about-container h2 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 32px;
-  color: #1f2937;
 }
 
 .about-content {
@@ -314,28 +281,10 @@ header {
   align-items: center;
 }
 
-.about-text p {
-  font-size: 16px;
-  color: #4b5563;
-  line-height: 1.8;
-  margin-bottom: 20px;
-  text-align: left;
-  color: white;
-}
-
-.about-text p:last-child {
-  margin-bottom: 0;
-}
-
-.about-text {
-  text-align: left;
-}
-
 .about-text h2 {
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #1f2937;
   line-height: 1.2;
 }
 
@@ -344,10 +293,6 @@ header {
   color: #4b5563;
   line-height: 1.8;
   margin-bottom: 24px;
-}
-
-.about-text p:last-of-type {
-  margin-bottom: 40px;
 }
 
 .stats-grid {
@@ -372,7 +317,6 @@ header {
   display: block;
   font-size: 14px;
   color: #6b7280;
-  font-weight: 500;
 }
 
 .about-image {
@@ -388,16 +332,14 @@ header {
   border-radius: 16px;
 }
 
-/*Service Pro Bottom Register Section*/
+/* ---------- CTA (Service Pro) ---------- */
 
 .service-pro-cta {
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
-              url('../images/hero-bg.png');
+  background: url('../images/hero-bg.png');
   background-size: cover;
   background-position: center;
   padding: 96px 16px;
   text-align: center;
-  color: white;
 }
 
 .cta-container {
@@ -407,50 +349,44 @@ header {
 
 .cta-label {
   display: inline-block;
-  background-color: rgba(253, 248, 248, 0.458);
-  color: #fdfdfd;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
   padding: 6px 16px;
   border-radius: 20px;
   font-size: 12px;
   font-weight: 600;
   margin-bottom: 16px;
-  border: 1px solid rgb(253, 252, 252);
+  border: 1px solid white;
 }
 
 .cta-container h2 {
   font-size: 48px;
   font-weight: 800;
   margin-bottom: 16px;
-  line-height: 1.2;
-  letter-spacing: -0.5px;
-  color: #faf8f8;
-  -webkit-text-stroke: 1px #ffffff;
+  color: white;
 }
 
 .cta-container h2 .highlight {
   color: #10b981;
-  -webkit-text-stroke: 1px #10b981;
 }
 
 .cta-container p {
   font-size: 16px;
   margin: 24px auto 40px;
   max-width: 672px;
-  line-height: 1.6;
-  color: #ffffff;
+  color: white;
 }
 
 .cta-button {
   padding: 16px 40px;
   background-color: white;
   color: #10b981;
-  border: none;
   border-radius: 24px;
   font-size: 16px;
   font-weight: bold;
-  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
   transition: all 0.2s;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button:hover {
@@ -458,27 +394,67 @@ header {
   transform: translateY(-2px);
 }
 
-/* Blank White Space Section */
+/* ---------- BROWSE SERVICES ---------- */
 
-.blank-space-section {
-  background-color: #ffffff;
-  padding: 20px 16px;
-  width: 100%;
+.browse-services {
+  background-color: white;
+  border-top: 1px solid #e5e7eb;
+  padding: 64px 16px;
+}
+
+.browse-services h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
   text-align: center;
 }
 
-.blank-section-content {
+.browse-services p {
+  font-size: 14px;
+  color: #6b7280;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 16px;
   max-width: 1280px;
   margin: 0 auto;
 }
 
-.blank-section-content p {
-  font-size: 14px;
-  color: #6b7280; 
-  line-height: 1.6;
+.service-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #1f2937;
+  transition: all 0.2s;
 }
 
-/*--------------------------------Find a Service Pro Page----------------------------------------*/
+.service-card:hover {
+  background-color: #f0fdf4;
+  border-color: #059669;
+  transform: translateY(-4px);
+}
+
+.service-icon {
+  font-size: 40px;
+}
+
+.service-name {
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ---------- FIND PAGE ---------- */
 
 .find-filters {
   background-color: white;
@@ -495,11 +471,6 @@ header {
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 32px;
-  color: #1f2937;
-}
-
-.filter-form {
-  width: 100%;
 }
 
 .filter-row {
@@ -518,7 +489,6 @@ header {
 .filter-group label {
   font-size: 14px;
   font-weight: 600;
-  color: #1f2937;
 }
 
 .filter-group select {
@@ -526,16 +496,13 @@ header {
   border: 1px solid #d1d5db;
   border-radius: 8px;
   font-size: 14px;
-  color: #1f2937;
   background-color: white;
   cursor: pointer;
-  transition: all 0.2s;
 }
 
 .filter-group select:focus {
   outline: none;
   border-color: #059669;
-  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
 }
 
 .search-btn {
@@ -547,16 +514,11 @@ header {
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.2s;
   height: 48px;
 }
 
 .search-btn:hover {
   background-color: #047857;
-}
-
-.search-btn:active {
-  transform: scale(0.95);
 }
 
 .find-results {
@@ -576,18 +538,15 @@ header {
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 20px;
-  transition: all 0.2s;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 .worker-card h3 {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 8px;
-  color: #1f2937;
 }
 
 .worker-card .job-type {
@@ -602,18 +561,12 @@ header {
 }
 
 .worker-card .location {
-  display: flex;
-  align-items: center;
-  gap: 4px;
   font-size: 13px;
   color: #6b7280;
   margin-bottom: 12px;
 }
 
 .worker-card .rating {
-  display: flex;
-  align-items: center;
-  gap: 4px;
   font-size: 13px;
   color: #6b7280;
   margin-bottom: 16px;
@@ -638,63 +591,30 @@ header {
   margin-top: auto;
 }
 
-.contact-buttons .phone-btn,
-.contact-buttons .whatsapp-btn,
-.contact-buttons .view-reviews-btn,
-.contact-buttons .review-btn {
+.contact-buttons a {
   padding: 10px 12px;
-  border: none;
   border-radius: 6px;
   font-size: 12px;
   font-weight: bold;
-  cursor: pointer;
   text-decoration: none;
   text-align: center;
+  min-height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
-  height: auto;
-  min-height: 40px;
 }
 
-.phone-btn {
-  background-color: #059669;
-  color: white;
-}
+.phone-btn    { background-color: #059669; color: white; }
+.whatsapp-btn { background-color: #25d366; color: white; }
+.view-reviews-btn { background-color: #8b5cf6; color: white; }
+.review-btn   { background-color: #f59e0b; color: white; }
 
-.phone-btn:hover {
-  background-color: #047857;
-}
+.phone-btn:hover    { background-color: #047857; }
+.whatsapp-btn:hover { background-color: #1bab5e; }
+.view-reviews-btn:hover { background-color: #7c3aed; }
+.review-btn:hover   { background-color: #d97706; }
 
-.whatsapp-btn {
-  background-color: #25d366;
-  color: white;
-}
-
-.whatsapp-btn:hover {
-  background-color: #1bab5e;
-}
-
-.view-reviews-btn {
-  background-color: #8b5cf6;
-  color: white;
-}
-
-.view-reviews-btn:hover {
-  background-color: #7c3aed;
-}
-
-.review-btn {
-  background-color: #f59e0b;
-  color: white;
-}
-
-.review-btn:hover {
-  background-color: #d97706;
-}
-
-/*----------------------------------CSS for login/register pages------------------------------*/
+/* ---------- AUTH (Login / Register) ---------- */
 
 .auth-section {
   background-color: #f9fafb;
@@ -710,6 +630,10 @@ header {
   max-width: 400px;
 }
 
+.auth-large {
+  max-width: 600px;
+}
+
 .auth-box {
   background-color: white;
   padding: 40px;
@@ -721,17 +645,12 @@ header {
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 8px;
-  color: #1f2937;
 }
 
 .auth-box p {
   font-size: 14px;
   color: #6b7280;
   margin-bottom: 24px;
-}
-
-.auth-form {
-  width: 100%;
 }
 
 .form-group {
@@ -744,23 +663,34 @@ header {
 .form-group label {
   font-size: 14px;
   font-weight: 600;
-  color: #1f2937;
 }
 
-.form-group input {
+.form-group input,
+.form-group select,
+.form-group textarea {
   padding: 12px 16px;
   border: 1px solid #d1d5db;
   border-radius: 8px;
   font-size: 14px;
-  color: #1f2937;
+  font-family: inherit;
   background-color: white;
-  transition: all 0.2s;
 }
 
-.form-group input:focus {
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
   outline: none;
   border-color: #059669;
-  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
 .auth-button {
@@ -773,7 +703,6 @@ header {
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.2s;
   margin-top: 8px;
 }
 
@@ -781,8 +710,30 @@ header {
   background-color: #047857;
 }
 
-.auth-button:active {
-  transform: scale(0.98);
+.button-row {
+  display: flex;
+  gap: 12px;
+}
+
+.button-row .auth-button,
+.button-row .cancel-btn {
+  flex: 1;
+}
+
+.cancel-btn {
+  background-color: #d24420;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background-color: #9b1e1e;
 }
 
 .error-message {
@@ -807,7 +758,6 @@ header {
 
 .success-message a {
   color: #059669;
-  text-decoration: underline;
   font-weight: 600;
 }
 
@@ -822,60 +772,28 @@ header {
   color: #059669;
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.2s;
 }
 
-.auth-footer a:hover {
-  text-decoration: underline;
+.auth-roles {
+  text-align: center;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+  font-size: 13px;
 }
 
-/*----------------------------------CSS for the wider technician form------------------------------*/
-
-.auth-large {
-  max-width: 600px;
+.auth-roles a {
+  color: #059669;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 8px;
 }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+.auth-roles span {
+  color: #d1d5db;
 }
 
-.form-group textarea {
-  padding: 12px 16px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  font-size: 14px;
-  color: #1f2937;
-  background-color: white;
-  font-family: inherit;
-  resize: vertical;
-  transition: all 0.2s;
-}
-
-.form-group textarea:focus {
-  outline: none;
-  border-color: #059669;
-  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
-}
-
-.form-group input[type="number"] {
-  padding: 12px 16px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  font-size: 14px;
-  color: #1f2937;
-  background-color: white;
-  transition: all 0.2s;
-}
-
-.form-group input[type="number"]:focus {
-  outline: none;
-  border-color: #059669;
-  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
-}
-
-/*----------------------------------CSS for the dashboard------------------------------*/
+/* ---------- DASHBOARD / PROFILE ---------- */
 
 .dashboard-section {
   background-color: #f9fafb;
@@ -900,27 +818,22 @@ header {
 .dashboard-header h1 {
   font-size: 32px;
   font-weight: 700;
-  color: #1f2937;
-  margin: 0;
 }
 
 .dashboard-header p {
   font-size: 14px;
   color: #6b7280;
-  margin: 4px 0 0 0;
+  margin-top: 4px;
 }
 
 .logout-btn {
   padding: 10px 20px;
   background-color: #ef4444;
   color: white;
-  border: none;
   border-radius: 8px;
   font-size: 14px;
   font-weight: bold;
-  cursor: pointer;
   text-decoration: none;
-  transition: all 0.2s;
 }
 
 .logout-btn:hover {
@@ -933,13 +846,8 @@ header {
   gap: 32px;
 }
 
-@media (max-width: 768px) {
-  .dashboard-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.profile-card {
+.profile-card,
+.stats-card {
   background-color: white;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
@@ -947,11 +855,11 @@ header {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.profile-card h2 {
+.profile-card h2,
+.stats-card h2 {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 24px;
-  color: #1f2937;
 }
 
 .profile-item {
@@ -967,7 +875,6 @@ header {
 
 .profile-item label {
   font-weight: 600;
-  color: #1f2937;
   font-size: 14px;
 }
 
@@ -978,36 +885,20 @@ header {
 }
 
 .edit-btn {
-  width: 100%;
+  display: block;
+  text-align: center;
   padding: 12px 16px;
   background-color: #059669;
   color: white;
-  border: none;
   border-radius: 8px;
   font-size: 14px;
   font-weight: bold;
-  cursor: pointer;
+  text-decoration: none;
   margin-top: 24px;
-  transition: all 0.2s;
 }
 
 .edit-btn:hover {
   background-color: #047857;
-}
-
-.stats-card {
-  background-color: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 32px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.stats-card h2 {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 24px;
-  color: #1f2937;
 }
 
 .stat-box {
@@ -1032,10 +923,9 @@ header {
 .stat-label {
   font-size: 14px;
   color: #6b7280;
-  font-weight: 500;
 }
 
-/*---------------------------------CSS for the admin panel-----------------------------*/
+/* ---------- ADMIN PANEL ---------- */
 
 .admin-section {
   background-color: #f9fafb;
@@ -1060,8 +950,6 @@ header {
 .admin-header h1 {
   font-size: 32px;
   font-weight: 700;
-  color: #1f2937;
-  margin: 0;
 }
 
 .admin-stats {
@@ -1075,7 +963,6 @@ header {
   border-radius: 12px;
   border: 1px solid #e5e7eb;
   text-align: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .admin-stats .stat-number {
@@ -1088,7 +975,6 @@ header {
 .admin-stats .stat-text {
   font-size: 14px;
   color: #6b7280;
-  font-weight: 500;
 }
 
 .admin-table-section {
@@ -1097,15 +983,12 @@ header {
   border-radius: 12px;
   padding: 32px;
   margin-bottom: 32px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .admin-table-section h2 {
   font-size: 20px;
   font-weight: 700;
-  color: #1f2937;
   margin-bottom: 24px;
-  margin-top: 0;
 }
 
 .admin-table {
@@ -1122,13 +1005,11 @@ header {
   padding: 16px;
   text-align: left;
   font-weight: 600;
-  color: #1f2937;
   font-size: 14px;
 }
 
 .admin-table tbody tr {
   border-bottom: 1px solid #e5e7eb;
-  transition: all 0.2s;
 }
 
 .admin-table tbody tr:hover {
@@ -1138,7 +1019,6 @@ header {
 .admin-table td {
   padding: 16px;
   font-size: 14px;
-  color: #1f2937;
 }
 
 .delete-btn {
@@ -1150,119 +1030,13 @@ header {
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.2s;
 }
 
 .delete-btn:hover {
   background-color: #dc2626;
 }
 
-.delete-btn:active {
-  transform: scale(0.95);
-}
-
-/* Make anchor tags look like buttons */
-
-a.btn-primary,
-a.btn-secondary,
-a.cta-button,
-a.login-btn {
-  display: inline-block;
-  text-decoration: none;
-  cursor: pointer;
-  text-align: center;
-}
-
-a.login-btn {
-  padding: 8px 20px;
-  background-color: #059669;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: bold;
-  transition: all 0.2s;
-}
-
-a.login-btn:hover {
-  background-color: #047857;
-}
-
-a.login-btn:active {
-  transform: scale(0.95);
-}
-
-/* Cancel Button in Edit Your Profile */
-
-.cancel-btn {
-  background-color: #d24420;
-  color: white;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 16px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.cancel-btn:hover {
-  background-color: #9b1e1e;
-}
-
-.cancel-btn:active {
-  transform: scale(0.98);
-}
-
-/*-----Add CSS for Rating-------*/
-
-.rating-selector {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 8px;
-    margin-bottom: 16px;
-}
-
-.rating-selector input {
-    display: none;
-}
-
-.rating-selector label {
-    padding: 12px;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    cursor: pointer;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 600;
-    transition: all 0.2s;
-}
-
-.rating-selector input:checked + label {
-    background-color: #fef3c7;
-    border-color: #f59e0b;
-    color: #b45309;
-}
-
-.rating-selector label:hover {
-    background-color: #fffbeb;
-    border-color: #f59e0b;
-}
-
-.review-btn {
-    background-color: #f59e0b !important;
-}
-
-.review-btn:hover {
-    background-color: #d97706 !important;
-}
-
-/*-----CSS for Reviews Page-------*/
+/* ---------- REVIEWS PAGE ---------- */
 
 .reviews-section {
   background-color: #f9fafb;
@@ -1284,20 +1058,18 @@ a.login-btn:active {
   border-radius: 12px;
   margin-bottom: 32px;
   border: 1px solid #e5e7eb;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .tech-info h1 {
   font-size: 28px;
   font-weight: 700;
-  margin: 0 0 4px 0;
-  color: #1f2937;
+  margin-bottom: 4px;
 }
 
 .tech-info p {
   font-size: 14px;
   color: #6b7280;
-  margin: 0 0 12px 0;
+  margin-bottom: 12px;
 }
 
 .tech-stats {
@@ -1314,7 +1086,6 @@ a.login-btn:active {
   border-radius: 6px;
   font-size: 14px;
   font-weight: bold;
-  transition: all 0.2s;
 }
 
 .back-btn:hover {
@@ -1325,7 +1096,6 @@ a.login-btn:active {
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 24px;
-  color: #1f2937;
 }
 
 .review-card {
@@ -1334,7 +1104,6 @@ a.login-btn:active {
   border-radius: 12px;
   border: 1px solid #e5e7eb;
   margin-bottom: 16px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .review-header {
@@ -1348,7 +1117,6 @@ a.login-btn:active {
 
 .review-user {
   font-weight: 600;
-  color: #1f2937;
   font-size: 14px;
 }
 
@@ -1379,300 +1147,134 @@ a.login-btn:active {
   font-size: 14px;
 }
 
-.view-reviews-btn {
-  background-color: #8b5cf6 !important;
-}
+/* ---------- RATING SELECTOR ---------- */
 
-.view-reviews-btn:hover {
-  background-color: #7c3aed !important;
-}
-
-/*--------Inconsistent Error Messages--------*/
-
-.error-message {
-  background-color: #fee;
-  color: #c33;
-  padding: 12px 16px;
-  border-radius: 8px;
-  font-size: 14px;
-  margin-bottom: 20px;
-  border-left: 4px solid #c33;
-}
-
-.success-message {
-  background-color: #efe;
-  color: #3c3;
-  padding: 12px 16px;
-  border-radius: 8px;
-  font-size: 14px;
-  margin-bottom: 20px;
-  border-left: 4px solid #3c3;
-}
-
-.success-message a {
-  color: #059669;
-  text-decoration: underline;
-  font-weight: 600;
-}
-
-/*-----------------------Browse Services Section-----------------------*/
-
-.browse-services {
-  background-color: white;
-  border-top: 1px solid #e5e7eb;
-  padding: 64px 16px;
-}
-
-.browse-services h2 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: #1f2937;
-  text-align: center;
-}
-
-.browse-services p {
-  font-size: 14px;
-  color: #6b7280;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 16px;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-.service-card {
+.rating-selector {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 20px;
-  background-color: #f9fafb;
+  flex-direction: column-reverse;
+  gap: 8px;
+}
+
+.rating-selector input {
+  display: none;
+}
+
+.rating-selector label {
+  padding: 12px;
   border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  text-decoration: none;
-  color: #1f2937;
-  transition: all 0.2s;
+  border-radius: 8px;
   cursor: pointer;
-}
-
-.service-card:hover {
-  background-color: #f0fdf4;
-  border-color: #059669;
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(5, 150, 105, 0.1);
-}
-
-.service-icon {
-  font-size: 40px;
-  line-height: 1;
-}
-
-.service-name {
-  font-size: 13px;
-  font-weight: 600;
   text-align: center;
-  color: #1f2937;
+  font-size: 14px;
+  font-weight: 600;
 }
 
-/* When screen is small (tablets & phones) */
+.rating-selector input:checked + label {
+  background-color: #fef3c7;
+  border-color: #f59e0b;
+}
+
+.rating-selector label:hover {
+  background-color: #fffbeb;
+  border-color: #f59e0b;
+}
+
+/* ---------- MOBILE (Tablets & Phones) ---------- */
+
 @media (max-width: 768px) {
-
-    /* ---------- HEADER: Stack everything ---------- */
-    .header-container {
-        display: block;           /* Stop using flex, use normal block */
-        height: auto;             /* Let it grow as needed */
-        text-align: center;       /* Center everything */
-    }
-
-    .logo {
-        display: block;           /* Logo on its own line */
-        text-align: center;
-        margin-bottom: 8px;
-    }
-
-    .nav-tabs {
-        display: block;           /* Nav links on their own line */
-        text-align: center;
-        border-top: 1px solid #e5e7eb;
-        padding-top: 12px;
-    }
-
-    .nav-link {
-        display: inline-block;    /* Keep links in one line, but wrap if needed */
-        font-size: 13px;
-        padding: 4px 10px;
-        margin: 2px 0;
-    }
-
-    .login-btn {
-        display: inline-block;    /* Login button centered below */
-        margin-top: 10px;
-        margin-bottom: 8px;
-    }
-
-    /* ---------- ADMIN PANEL ---------- */
-    .admin-table-section {
-        padding: 12px;
-        overflow-x: auto;         /* Allow scrolling if table too wide */
-    }
-
-    .admin-table {
-        font-size: 12px;
-        min-width: 500px;         /* Prevent table from breaking */
-    }
-
-    .admin-table th,
-    .admin-table td {
-        padding: 8px 6px;
-        font-size: 11px;
-    }
-
-    .admin-stats {
-        display: block;           /* Stack stats vertically */
-    }
-
-    .admin-stats .stat-card {
-        margin-bottom: 12px;
-        padding: 16px;
-    }
-
-    .admin-stats .stat-number {
-        font-size: 28px;
-    }
-
-    /* ---------- TECHNICIAN REGISTRATION ---------- */
-    .auth-box {
-        padding: 20px 16px;
-    }
-
-    .form-row {
-        display: block;           /* Stack fields vertically */
-    }
-
-    .form-row .form-group {
-        margin-bottom: 14px;
-    }
-
-    .auth-box h1 {
-        font-size: 22px;
-    }
-
-    /* ---------- FIND PAGE SEARCH ---------- */
-    .filter-row {
-        display: block;           /* Stack dropdowns + button vertically */
-    }
-
-    .filter-group {
-        width: 100%;
-        margin-bottom: 12px;
-    }
-
-    .filter-group select {
-        width: 100%;
-        padding: 12px 14px;
-        font-size: 16px;          /* Bigger for easier touch */
-    }
-
-    .search-btn {
-        width: 100%;              /* Full width button */
-        height: 50px;
-        font-size: 16px;
-    }
-
-    .find-container h1 {
-        font-size: 26px;
-    }
-
-    /* ---------- RESULTS CARDS ---------- */
-    #results {
-        display: block;           /* Stack cards vertically */
-    }
-
-    .worker-card {
-        margin-bottom: 16px;
-        padding: 16px;
-    }
-
-    .contact-buttons {
-        display: grid;
-        grid-template-columns: 1fr 1fr;  /* 2 columns for buttons */
-        gap: 8px;
-    }
-
-    .contact-buttons .phone-btn,
-    .contact-buttons .whatsapp-btn,
-    .contact-buttons .view-reviews-btn,
-    .contact-buttons .review-btn {
-        font-size: 11px;
-        padding: 8px 6px;
-        text-align: center;
-    }
-
-    .worker-card .phone-display {
-        font-size: 13px;
-        padding: 6px 10px;
-    }
-}
-
-/* ---------- Very Small Screens (old phones) ---------- */
-@media (max-width: 400px) {
-    .admin-table {
-        font-size: 10px;
-        min-width: 400px;
-    }
-
-    .admin-table th,
-    .admin-table td {
-        padding: 4px 4px;
-        font-size: 10px;
-    }
-
-    .delete-btn {
-        padding: 4px 6px;
-        font-size: 10px;
-    }
-
-    .contact-buttons {
-        grid-template-columns: 1fr 1fr;
-        gap: 6px;
-    }
-
-    .contact-buttons .phone-btn,
-    .contact-buttons .whatsapp-btn,
-    .contact-buttons .view-reviews-btn,
-    .contact-buttons .review-btn {
-        font-size: 10px;
-        padding: 6px 4px;
-    }
-}
-
-/* Role login links on login page */
-.auth-roles {
+  .header-container {
+    display: block;
+    height: auto;
     text-align: center;
-    margin-top: 16px;
-    padding-top: 16px;
+    padding: 12px 16px;
+  }
+
+  .logo {
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  .nav-tabs {
+    justify-content: center;
+    flex-wrap: wrap;
     border-top: 1px solid #e5e7eb;
-    font-size: 13px;
+    padding-top: 12px;
+  }
+
+  .login-btn {
+    margin-top: 10px;
+  }
+
+  .filter-row {
+    grid-template-columns: 1fr;
+  }
+
+  .search-btn {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .find-container h1 {
+    font-size: 26px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  #results {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-table-section {
+    padding: 12px;
+    overflow-x: auto;
+  }
+
+  .admin-table {
+    min-width: 500px;
+  }
+
+  .admin-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero h1 .service-box {
+    font-size: 20px;
+  }
+
+  .cta-container h2 {
+    font-size: 32px;
+  }
 }
 
-.auth-roles a {
-    color: #059669;
-    text-decoration: none;
-    font-weight: 600;
-    margin: 0 8px;
-}
-
-.auth-roles a:hover {
-    text-decoration: underline;
-}
-
-.auth-roles span {
-    color: #d1d5db;
+@media (max-width: 400px) {
+  .hero h1 { font-size: 26px; }
+  .hero h1 .service-box { font-size: 16px; }
+  .admin-table { min-width: 400px; font-size: 11px; }
+  .contact-buttons a { font-size: 10px; padding: 6px 4px; }
 }

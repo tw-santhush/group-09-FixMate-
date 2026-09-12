@@ -1,103 +1,83 @@
 <?php
-/** @var mysqli $conn */
-
 include '../includes/config.php';
 include '../includes/header.php';
 
 $error = '';
 $success = '';
 
-// Handle form submission
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $phone_input = mysqli_real_escape_string($conn, $_POST['phone']);
-    // Normalize: remove +, 0, spaces; ensure starts with 94
-    $phone = preg_replace('/[^0-9]/', '', $phone_input);
-    if (substr($phone, 0, 2) == '94') {
-        // Already correct, starts with 94
-    } else if (substr($phone, 0, 1) == '0') {
-        $phone = '94' . substr($phone, 1); // Remove leading 0, add 94
-    } else {
-        $phone = '94' . $phone; // No 0, just prepend 94
-    }
-    $district_id = mysqli_real_escape_string($conn, $_POST['district']);
-    $service_id = mysqli_real_escape_string($conn, $_POST['service']);
-    $experience = mysqli_real_escape_string($conn, $_POST['experience']);
-    $bio = mysqli_real_escape_string($conn, $_POST['bio']);
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone_input = $_POST['phone'];
+    // Convert 0712345678 to 94712345678
+    $phone = '94' . substr($phone_input, 1);
+    $district_id = $_POST['district'];
+    $service_id = $_POST['service'];
+    $experience = $_POST['experience'];
+    $bio = $_POST['bio'];
     $password = $_POST['password'];
-    $confirm_password = $_POST['confirm_password'];
-    
-    if ($name && $email && $phone && $district_id && $service_id && $experience && $password && $confirm_password) {
-        // Check if password matches
-        if ($password !== $confirm_password) {
-            $error = 'Passwords do not match.';
-        } else if (strlen($password) < 6) {
-            $error = 'Password must be at least 6 characters.';
+    $confirm = $_POST['confirm_password'];
+
+    if ($password != $confirm) {
+        $error = 'Passwords do not match.';
+    } elseif (strlen($password) < 6) {
+        $error = 'Password must be at least 6 characters.';
+    } else {
+        $check = mysqli_query($conn, "SELECT id FROM technicians WHERE email = '$email'");
+
+        if (mysqli_num_rows($check) > 0) {
+            $error = 'Email already registered.';
         } else {
-            // Check if email already exists
-            $check_query = "SELECT id FROM technicians WHERE email = '$email'";
-            $check_result = mysqli_query($conn, $check_query);
-            
-            if (mysqli_num_rows($check_result) > 0) {
-                $error = 'Email already registered as a technician.';
+            $hashed = password_hash($password, PASSWORD_DEFAULT);
+            $insert = "INSERT INTO technicians (name, email, phone, district_id, service_id, experience, bio, password) 
+                       VALUES ('$name', '$email', '$phone', '$district_id', '$service_id', '$experience', '$bio', '$hashed')";
+
+            if (mysqli_query($conn, $insert)) {
+                $success = 'Account created! <a href="login_technician.php">Click here to login</a>';
             } else {
-                // Hash password and insert technician
-                $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-                $insert_query = "INSERT INTO technicians (name, email, phone, district_id, service_id, experience, bio, password) 
-                                 VALUES ('$name', '$email', '$phone', '$district_id', '$service_id', '$experience', '$bio', '$hashed_password')";
-                
-                if (mysqli_query($conn, $insert_query)) {
-                    $success = 'Account created successfully! Your phone: ' . htmlspecialchars($phone) . ' <a href="login_technician.php">Click here to login</a>';
-                } else {
-                    $error = 'Error creating account. Please try again.';
-                }
+                $error = 'Error creating account.';
             }
         }
-    } else {
-        $error = 'Please fill all fields.';
     }
 }
 ?>
 
-<!-- Technician Registration Section -->
 <section class="auth-section">
     <div class="auth-container auth-large">
         <div class="auth-box">
             <h1>Register as a Service Pro</h1>
             <p>Get listed on FixMate and start receiving customer calls.</p>
-            
-            <?php if ($error): ?>
-                <div class="error-message"><?php echo htmlspecialchars($error); ?></div>
-            <?php endif; ?>
-            
-            <?php if ($success): ?>
+
+            <?php if ($error) { ?>
+                <div class="error-message"><?php echo $error; ?></div>
+            <?php } ?>
+
+            <?php if ($success) { ?>
                 <div class="success-message"><?php echo $success; ?></div>
-            <?php endif; ?>
-            
+            <?php } ?>
+
             <form method="POST" class="auth-form">
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
+                        <label>Full Name</label>
+                        <input type="text" name="name" required>
                     </div>
-                    
                     <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="0712345678" required>
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone" placeholder="0712345678" required>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
+                    <label>Email</label>
+                    <input type="email" name="email" required>
                 </div>
-                
+
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="district">District</label>
-                        <select id="district" name="district" required>
-                            <option value="">-- Choose a District --</option>
+                        <label>District</label>
+                        <select name="district" required>
+                            <option value="">-- Choose District --</option>
                             <option value="1">Colombo</option>
                             <option value="2">Gampaha</option>
                             <option value="3">Kalutara</option>
@@ -125,10 +105,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
                             <option value="25">Vavuniya</option>
                         </select>
                     </div>
-                    
                     <div class="form-group">
-                        <label for="service">Service Type</label>
-                        <select id="service" name="service" required>
+                        <label>Service Type</label>
+                        <select name="service" required>
                             <option value="">-- Choose Service --</option>
                             <option value="1">Plumber</option>
                             <option value="2">Electrician</option>
@@ -148,32 +127,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
                         </select>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
-                    <label for="experience">Years of Experience</label>
-                    <input type="number" id="experience" name="experience" min="0" max="70" required>
+                    <label>Years of Experience</label>
+                    <input type="number" name="experience" min="0" max="70" required>
                 </div>
-                
+
                 <div class="form-group">
-                    <label for="bio">Short Bio / About You</label>
-                    <textarea id="bio" name="bio" rows="4" placeholder="Tell customers about your experience and specialties..."></textarea>
+                    <label>Short Bio</label>
+                    <textarea name="bio" rows="4" placeholder="Tell customers about your experience..."></textarea>
                 </div>
-                
+
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" required>
+                        <label>Password</label>
+                        <input type="password" name="password" required>
                     </div>
-                    
                     <div class="form-group">
-                        <label for="confirm_password">Confirm Password</label>
-                        <input type="password" id="confirm_password" name="confirm_password" required>
+                        <label>Confirm Password</label>
+                        <input type="password" name="confirm_password" required>
                     </div>
                 </div>
-                
-                <button type="submit" name="register" class="auth-button">Create Account</button>
+
+                <button type="submit" class="auth-button">Create Account</button>
             </form>
-            
+
             <p class="auth-footer">
                 Already have an account? <a href="login_technician.php">Sign in here</a>
             </p>
