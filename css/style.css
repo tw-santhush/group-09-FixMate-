@@ -332,7 +332,7 @@ header {
   border-radius: 16px;
 }
 
-/* ---------- CTA (Service Pro) ---------- */
+/* ---------- Service Pro ---------- */
 
 .service-pro-cta {
   background: url('../images/hero-bg.png');
@@ -614,7 +614,7 @@ header {
 .view-reviews-btn:hover { background-color: #7c3aed; }
 .review-btn:hover   { background-color: #d97706; }
 
-/* ---------- AUTH (Login / Register) ---------- */
+/* ---------- Login / Register ---------- */
 
 .auth-section {
   background-color: #f9fafb;

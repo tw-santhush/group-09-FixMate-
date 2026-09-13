@@ -111,7 +111,7 @@ include '../includes/header.php';
     </div>
 </section>
 
-<!-- Service Pro CTA Section -->
+<!-- Service Pro Section -->
 <section class="service-pro-cta">
     <div class="cta-container">
         <div class="cta-label">For Professionals</div>
